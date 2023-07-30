@@ -6,11 +6,6 @@ from sys import stderr, exit, stdout
 from requests.exceptions import HTTPError
 
 print("Importing database...")
-print("Setting database URL...")
-
-db.db_url = "https://pytest.element1010.repl.co"
-
-print("Successfully set DB URL to https://pytest.element1010.repl.co")
 
 print("Looking for test ID...")
 with open("data.json") as testData:
@@ -44,7 +39,7 @@ for q in test:
   ans = input(q + " \033[38;2;0;255;0m")
   stdout.write("\033[0m")
 
-  db[id][user][cur] = ans
+  db[cur] = ans
   cur += 1
 
 print("Test completed and submitted.")
